@@ -1,0 +1,6 @@
+{
+  "name": "Dwaar – Smart Real Estate Link & QR Landing Page",
+  "description": "Replace heavy PDF brochures with one fast, live smart link and QR code per real estate project. Made for builders and brokers.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

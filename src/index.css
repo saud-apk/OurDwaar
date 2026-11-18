@@ -1,0 +1,103 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --color-navy: #0A1530;
+    --color-cream: #F5EBDA;
+    --color-warm-glow: #F6DDB0;
+    --color-offwhite: #FBF7F0;
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    color: #0A1530;
+    background-color: #FBF7F0;
+    overflow-x: hidden;
+  }
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Subtle gentle floating animation for the phone mockup */
+@keyframes gentleFloat {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.animate-gentle-float {
+  animation: gentleFloat 5s ease-in-out infinite;
+}
+
+/* Door opening light beam expansion on page load */
+@keyframes doorGlowExpand {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.65);
+    filter: blur(40px);
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+    filter: blur(28px);
+  }
+}
+
+.animate-door-expand {
+  animation: doorGlowExpand 1.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Door frame light beam */
+@keyframes doorBeam {
+  0% {
+    opacity: 0;
+    clip-path: polygon(48% 0%, 52% 0%, 51% 100%, 49% 100%);
+  }
+  100% {
+    opacity: 1;
+    clip-path: polygon(30% 0%, 70% 0%, 95% 100%, 5% 100%);
+  }
+}
+
+.animate-door-beam {
+  animation: doorBeam 2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Arch motif helper classes */
+.arch-top {
+  border-radius: 9999px 9999px 0 0;
+}
+
+.arch-pill {
+  border-radius: 9999px 9999px 16px 16px;
+}
+
+.arch-icon {
+  border-radius: 20px 20px 8px 8px;
+}
+
+/* Phone screen scrollbar reset */
+.phone-screen-scroll::-webkit-scrollbar {
+  display: none;
+}
+.phone-screen-scroll {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
